@@ -1,0 +1,299 @@
+/* ╔══════════════════════════════════════════════════════════════════╗
+   ║  lumen-notify · ui/css/style.css                                 ║
+   ╚══════════════════════════════════════════════════════════════════╝ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+    user-select: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   CONTAINERS
+   ═══════════════════════════════════════════════════════════════════ */
+
+.notify-container {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 9999;
+    pointer-events: none;
+    width: 270px;
+    max-width: 270px;
+    transition: top 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                bottom 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#notify-top-left {
+    top: 20px;
+    left: 20px;
+    align-items: flex-start;
+}
+
+#notify-top-center {
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    align-items: center;
+}
+
+#notify-top-right {
+    top: 20px;
+    right: 20px;
+    align-items: flex-end;
+}
+
+#notify-bottom-left {
+    bottom: 230px;
+    left: 30px;
+    align-items: flex-start;
+    flex-direction: column-reverse;
+}
+
+#notify-bottom-center {
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    align-items: center;
+    flex-direction: column-reverse;
+}
+
+#notify-bottom-right {
+    bottom: 20px;
+    right: 20px;
+    align-items: flex-end;
+    flex-direction: column-reverse;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   NOTIFICATION ITEM
+   ═══════════════════════════════════════════════════════════════════ */
+
+.notify-item {
+    position: relative;
+    width: 270px;
+    max-width: 270px;
+    background: rgba(18, 18, 24, 0.75);
+    border: 1px solid rgba(0, 0, 0, 0.01);
+    border-radius: 10px;
+    overflow: hidden;
+    pointer-events: auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   NORMAL
+   ═══════════════════════════════════════════════════════════════════ */
+
+.notify-normal .notify-content-normal {
+    padding: 12px 14px;
+}
+
+.notify-normal .notify-text {
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 12.5px;
+    font-weight: 400;
+    line-height: 1.5;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   ADVANCED
+   ═══════════════════════════════════════════════════════════════════ */
+
+.notify-advanced {
+    position: relative;
+    isolation: isolate;
+}
+
+.notify-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.36;
+    border-radius: 10px;
+    display: block;
+}
+.notify-custom-gradient {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-radius: 10px;
+    z-index: 0;
+    opacity: 0.30;
+}
+
+.notify-content-advanced {
+    position: relative;
+    z-index: 1;
+    padding: 12px 14px;
+}
+
+.notify-header {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 8px;
+}
+
+.notify-logo {
+    width: 46px;
+    height: 46px;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.notify-titles {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.notify-title {
+    color: #ffffff;
+    font-size: 0.9em;
+    font-weight: 600;
+    line-height: 1.3;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+.notify-subtitle {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.7em;
+    font-weight: 600;
+    font-style: italic;
+    line-height: 1.3;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+.notify-advanced .notify-text {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 12.5px;
+    font-weight: 400;
+    line-height: 1.5;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   PROGRESS BAR
+   ═══════════════════════════════════════════════════════════════════ */
+
+.notify-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(18, 18, 24, 0.45);
+    overflow: hidden;
+    border-radius: 0 0 10px 10px;
+}
+
+.notify-progress-fill {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #8b5cf6, #8b5cf6);
+    border-radius: 0 0 10px 10px;
+    will-change: width;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════════════════════════════════════════ */
+
+.notify-anim-in-right {
+    animation: slideInRight 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.notify-anim-out-right {
+    animation: slideOutRight 0.3s cubic-bezier(0.55, 0, 1, 0.45) forwards;
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(120%); opacity: 0; }
+    to   { transform: translateX(0);    opacity: 1; }
+}
+@keyframes slideOutRight {
+    from { transform: translateX(0);    opacity: 1; }
+    to   { transform: translateX(120%); opacity: 0; }
+}
+
+.notify-anim-in-left {
+    animation: slideInLeft 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.notify-anim-out-left {
+    animation: slideOutLeft 0.3s cubic-bezier(0.55, 0, 1, 0.45) forwards;
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-120%); opacity: 0; }
+    to   { transform: translateX(0);     opacity: 1; }
+}
+@keyframes slideOutLeft {
+    from { transform: translateX(0);     opacity: 1; }
+    to   { transform: translateX(-120%); opacity: 0; }
+}
+
+.notify-anim-in-top {
+    animation: slideInTop 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.notify-anim-out-top {
+    animation: slideOutTop 0.3s cubic-bezier(0.55, 0, 1, 0.45) forwards;
+}
+
+@keyframes slideInTop {
+    from { transform: translateY(-120%); opacity: 0; }
+    to   { transform: translateY(0);     opacity: 1; }
+}
+@keyframes slideOutTop {
+    from { transform: translateY(0);     opacity: 1; }
+    to   { transform: translateY(-120%); opacity: 0; }
+}
+
+.notify-anim-in-bottom {
+    animation: slideInBottom 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.notify-anim-out-bottom {
+    animation: slideOutBottom 0.3s cubic-bezier(0.55, 0, 1, 0.45) forwards;
+}
+
+@keyframes slideInBottom {
+    from { transform: translateY(120%); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
+}
+@keyframes slideOutBottom {
+    from { transform: translateY(0);    opacity: 1; }
+    to   { transform: translateY(120%); opacity: 0; }
+}
